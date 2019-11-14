@@ -1,2 +1,5 @@
 # oscp
-OSCP notes etc
+
+OSCP prep & notes:
+
+
