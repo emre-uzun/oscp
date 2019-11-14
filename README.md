@@ -1,5 +1,0 @@
-# oscp
-
-OSCP prep & notes:
-
-
