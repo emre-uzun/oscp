@@ -8,3 +8,9 @@ uygulamayı analiz etmek için 3 method vardır.
 * Fuzzing
 
 ### Fuzzing
+
+SLMail uygulaması için ornek fuzzing kodu
+
+![Fuzzing SLMail](pictures/pic1.png)
+
+test
