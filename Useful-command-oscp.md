@@ -280,6 +280,7 @@ i586-mingw32msvc-gcc reverse.c -o ~/Desktop/custom-reverse.exe -lws2_32
 
 ## FLAG & CAPTURE
 
+```
 whoami
 ipconfig/ifconfig
 type C:\"Documents and Settings"\Administrator\Desktop\proof.txt
