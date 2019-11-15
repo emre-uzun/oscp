@@ -36,7 +36,7 @@ Immumity debugger defaultta stop durumdadır.
 buffer = 'A'*2700
 ```
 
-#### NOT: Uygulama her seferinde task manager dan kapatılmalı ve immunity debuuger a attach edilmelidir.
+**NOT: Uygulama her seferinde task manager dan kapatılmalı ve immunity debuuger a attach edilmelidir.**
 
 ## Controlling EIP (OSCP Soru Baslangic)
 
@@ -71,5 +71,20 @@ Not: 90 olması toplamda 2700 yapmak icin.
 
 - Uygulama tekrar attach edilir. 
 - EIP register 42424242 olmalı, yani BBBB.
+
+Buraya kadar OK ise, devam edilir. EIP BBBB olmadıysa işlem tekrar yapılır.
+
+## Introducing Shellcode
+
+- ESP > Sağ tık > Follow in Dump
+![Follow Dump ESP](pictures/pic1.png)
+
+Change Code:
+```
+buffer = 'A'*2606 + 'B'*4 + 'C'*(3500-2606-4)
+```
+
+Kaç byte bosluk oldugunu gormek icin aşağıdaki resimdeki gibi C'lerin sonuna bakılabilir.
+![Shell code Boşluk](pictures/pic2.png)
 
 
