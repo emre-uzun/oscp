@@ -42,21 +42,25 @@ buffer = 'A'*2700
 
 Kali:
 ```
-locate pattern_create
-/usr/share/metasploit-framework/tools/pattern_create.rb 2700
+locate pattern_create 
+ile dosya lokasyonu alınır ve aşağıdaki komut çalıştırılır. Not: 2700 koda göre değişecek.
+/usr/share/metasploit-framework/tools/pattern_create.rb -l 2700
 ```
 
 - Bu karakterler serisi alınır ve poc kodu degistirilir: 
 
 ```
-buffer = '<kopyalananSeri>'
+buffer = '<konyalananPattern>'
+ya da
+buffer = cmd + '<konyalananPattern>' + end
 ```
 
-- Exploit kodu çalıştırılır ve EIP'deki deger alınır
+- Exploit kodu çalıştırılır ve **EIP'deki** deger alınır
 
 Kali:
 ```
-/usr/share/metasploit-framework/tools/pattern_offset.rb <EIPdeger>
+locate pattern_offset.rb
+/usr/share/metasploit-framework/tools/pattern_offset.rb -q <EIPdeger>
 
 Dönen Örnek Cevap:
 
@@ -72,7 +76,7 @@ Not: 90 olması toplamda 2700 yapmak icin.
 - Uygulama tekrar attach edilir. 
 - EIP register 42424242 olmalı, yani BBBB.
 
-Buraya kadar OK ise, devam edilir. EIP BBBB olmadıysa işlem tekrar yapılır.
+Buraya kadar OK ise, devam edilir. **EIP BBBB olmadıysa işlem tekrar yapılır.**
 
 ## Introducing Shellcode
 
