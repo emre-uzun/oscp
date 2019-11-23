@@ -43,7 +43,9 @@ buffer = 'A'*2700
 Kali:
 ```
 locate pattern_create 
+```
 ile dosya lokasyonu alınır ve aşağıdaki komut çalıştırılır. Not: 2700 koda göre değişecek.
+```
 /usr/share/metasploit-framework/tools/pattern_create.rb -l 2700
 ```
 
@@ -51,7 +53,9 @@ ile dosya lokasyonu alınır ve aşağıdaki komut çalıştırılır. Not: 2700
 
 ```
 buffer = '<konyalananPattern>'
+```
 ya da
+```
 buffer = cmd + '<konyalananPattern>' + end
 ```
 
