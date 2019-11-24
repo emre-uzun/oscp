@@ -67,7 +67,7 @@ Find something
 cat config.php | grep db
 ```
 
-* **Automated Scripts:**
+## Automated Scripts:
 
 * Linux Priv Checker:
 
