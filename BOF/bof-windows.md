@@ -86,7 +86,7 @@ Buraya kadar OK ise, devam edilir. **EIP BBBB olmadıysa işlem tekrar yapılır
 
 - ESP > Sağ tık > Follow in Dump
 
-![Follow Dump ESP](picturesBOF/pic1.png)
+![Follow Dump ESP](picturesBof/pic1.png)
 
 Change Code:
 ```
@@ -95,7 +95,7 @@ buffer = 'A'*2606 + 'B'*4 + 'C'*(3500-2606-4)
 
 Kaç byte bosluk oldugunu gormek icin aşağıdaki resimdeki gibi C'lerin sonuna bakılabilir.
 
-![Shell code Boşluk](picturesBOF/pic2.png)
+![Shell code Boşluk](picturesBof/pic2.png)
 
 ## Bad Characters
 
@@ -133,7 +133,7 @@ Not: 00 null bytes'dır default'ta.
 
 - Aşağıdaki gibi diziyi bozan karakterler code'dan sırayla çıkartılarak bu işlem sonuna kadar devam ettirilir.
 
-![Bad Characters](picturesBOF/pic3.png)
+![Bad Characters](picturesBof/pic3.png)
 
 - Bu ornekte /x0a badcharacters'dir. 
 - Flow u bozan bütün bad characters ler silinir. /x00, /x0a, /x0d
@@ -149,7 +149,7 @@ Statik ESP adresi iyi bir çözüm değildir bu yüzden ESP'yi daha akıllıca d
 
 Mona modules ile dll'ler bulunur. Bu DLL ler bulunurken bir kaç kriter vardır.
 
-![Mona modules](picture/pic4.png)
+![Mona modules](picturesBof/pic4.png)
 
 ```
 !mona modules
@@ -168,11 +168,11 @@ buradan ilgili .dll dosyası bulunur.
 - ilgili .dll dosyası bulunur ve çift tıklanır.
 - Immunity Debugger baslik ilgili DLL oldugu gorulur.
 
-![executable module list](picturesBOF/pic5.png)
+![executable module list](picturesBof/pic5.png)
 
 ** JMP ESP ** bulmak için mona dan yararlanmak mantıklı.
 
-![Find Jmp Esp](picturesBOF/pic6.png)
+![Find Jmp Esp](picturesBof/pic6.png)
 
 JMP ESP -> FFE4
 
