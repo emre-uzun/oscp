@@ -1,14 +1,14 @@
 # File Transfer
 
 
-### HTTP Server
+## HTTP Server
 
 > python -m SimpleHTTPServer 8000
 
 > python3 -m http.server 8000
 
 
-### SMB File Upload
+## SMB File Upload
 
 **Method 1: Cadaver**
 
