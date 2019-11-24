@@ -3,6 +3,12 @@
 
 Windows Privilege Escalation resource http://www.fuzzysecurity.com/tutorials/16.html
 
+## Info
+
+```
+systeminfo | findstr /B /C:"OS Name" /C:"OS Version"
+```
+
 ## User Add and Admin Group Add
 
 ```
