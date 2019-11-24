@@ -154,3 +154,4 @@ type C:\"Documents and Settings"\Administrator\Desktop\proof.txt
 cat /root/proof.txt
 id
 dir C:\ /s/b | find /i “proof.txt”
+cat `find / -name proof.txt -print`
