@@ -15,6 +15,13 @@ cat /proc/version
 cat /etc/shadow @Normal kullanıcı göremez
 ```
 
+Services are Running as Root
+
+```
+ps aux | grep root
+```
+
+
 Find Suit & Guid Bit & Writeable Files
 ```
 find / -perm -u=s -type f 2>/dev/null
@@ -59,6 +66,30 @@ Find something
 ```
 cat config.php | grep db
 ```
+
+* **Automated Scripts:**
+
+* Linux Priv Checker:
+
+https://www.securitysift.com/download/linuxprivchecker.py
+
+* LinEnum:
+
+https://github.com/rebootuser/LinEnum
+
+* Linux Exploit Suggester:
+
+https://github.com/mzet-/linux-exploit-suggester
+
+* Old Linux Exploit SuggersteR:
+
+https://github.com/PenturaLabs/Linux_Exploit_Suggester
+
+* Linux Post Exploatation:
+
+https://github.com/reider-roque/linpostexp
+
+
 
 
 
