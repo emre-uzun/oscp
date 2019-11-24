@@ -9,9 +9,12 @@ https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/
 
 Kernel version detection & Priv Check:
 ```
-cat /etc/issue
 uname -a
 cat /proc/version
+cat /etc/issue
+cat /etc/*-release
+cat /etc/lsb-release      # Debian based
+cat /etc/redhat-release   # Redhat based
 cat /etc/shadow @Normal kullanıcı göremez
 ```
 
