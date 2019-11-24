@@ -1,4 +1,7 @@
-# Useful Command for Windows Privilage Escalations
+# Useful Command for Windows Privilage Escalation
+
+
+Windows Privilege Escalation resource http://www.fuzzysecurity.com/tutorials/16.html
 
 ## User Add and Admin Group Add
 
